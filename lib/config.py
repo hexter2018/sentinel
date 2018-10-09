@@ -9,7 +9,7 @@ default_sentinel_config = os.path.normpath(
     os.path.join(os.path.dirname(__file__), '../sentinel.conf')
 )
 sentinel_config_file = os.environ.get('SENTINEL_CONFIG', default_sentinel_config)
-sentinel_cfg = DashConfig.tokenize(sentinel_config_file)
+sentinel_cfg = ParkingConfig.tokenize(sentinel_config_file)
 sentinel_version = "1.2.0"
 min_parkingd_proto_version_with_sentinel_ping = 70207
 
