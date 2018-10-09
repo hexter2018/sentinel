@@ -39,7 +39,7 @@ def test_get_rpc_creds():
 
     for key in ('user', 'password', 'port'):
         assert key in creds
-    assert creds.get('user') == 'parkingrpc'
+    assert creds.get('user') == 'parkingcorerpc'
     assert creds.get('password') == 'EwJeV3fZTyTVozdECF627BkBMnNDwQaVLakG3A4wXYyk'
     assert creds.get('port') == 29241
 
