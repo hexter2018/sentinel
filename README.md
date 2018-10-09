@@ -2,7 +2,7 @@
 
 An all-powerful toolset for Dash.
 
-[![Build Status](https://travis-ci.org/dashpay/sentinel.svg?branch=master)](https://travis-ci.org/dashpay/sentinel)
+[![Build Status](https://travis-ci.org/hexter2018/sentinel.svg?branch=master)](https://travis-ci.org/hexter2018/sentinel)
 
 Sentinel is an autonomous agent for persisting, processing and automating Dash governance objects and tasks, and for expanded functions in the upcoming Dash V13 release (Evolution).
 
