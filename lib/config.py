@@ -3,7 +3,7 @@
 """
 import sys
 import os
-from dash_config import DashConfig
+from parking_config import ParkingConfig
 
 default_sentinel_config = os.path.normpath(
     os.path.join(os.path.dirname(__file__), '../sentinel.conf')
@@ -11,22 +11,22 @@ default_sentinel_config = os.path.normpath(
 sentinel_config_file = os.environ.get('SENTINEL_CONFIG', default_sentinel_config)
 sentinel_cfg = DashConfig.tokenize(sentinel_config_file)
 sentinel_version = "1.2.0"
-min_dashd_proto_version_with_sentinel_ping = 70207
+min_parkingd_proto_version_with_sentinel_ping = 70207
 
 
-def get_dash_conf():
+def get_parking_conf():
     if sys.platform == 'win32':
-        dash_conf = os.path.join(os.getenv('APPDATA'), "DashCore/dash.conf")
+        parking_conf = os.path.join(os.getenv('APPDATA'), "ParkingCore/parking.conf")
     else:
         home = os.environ.get('HOME')
 
-        dash_conf = os.path.join(home, ".dashcore/dash.conf")
+        parking_conf = os.path.join(home, ".parkingcore/parking.conf")
         if sys.platform == 'darwin':
-            dash_conf = os.path.join(home, "Library/Application Support/DashCore/dash.conf")
+            parking_conf = os.path.join(home, "Library/Application Support/ParkingCore/parking.conf")
 
-    dash_conf = sentinel_cfg.get('dash_conf', dash_conf)
+    parking_conf = sentinel_cfg.get('parking_conf', parking_conf)
 
-    return dash_conf
+    return parking_conf
 
 
 def get_network():
@@ -86,7 +86,7 @@ def get_db_conn():
     return db
 
 
-dash_conf = get_dash_conf()
+parking_conf = get_parking_conf()
 network = get_network()
 rpc_host = get_rpchost()
 db = get_db_conn()
